@@ -1,0 +1,24 @@
+{
+  "name": "sequelize-transparent-cache-hazelcast",
+  "version": "1.0.0",
+  "description": "A sequelize cache adaptor implementation with Hazelcast for sequelize-transparent-cache",
+  "main": "src/index.js",
+  "keywords": [
+    "sequelize",
+    "cache",
+    "plugin",
+    "hazelcast"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/srknzl/sequelize-hazelcast-adaptor.git"
+  },
+  "author": {
+    "name": "Serkan Ozel",
+    "email": "serkan.ozel@hazelcast.com"
+  },
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "hazelcast-client": "^5.1.0"
+  }
+}
