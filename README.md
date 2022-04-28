@@ -14,7 +14,7 @@ const HazelcastAdaptor = require('sequelize-transparent-cache-hazelcast')
 const hazelcastAdaptor = new HazelcastAdaptor({
   map: map,
   namespace: 'model', // optional
-  lifetime: 60 * 60, // optional
+  ttl: 60 * 60, // optional
 })
 ```
 
@@ -24,7 +24,7 @@ const hazelcastAdaptor = new HazelcastAdaptor({
 |-------------|------------------------------------------|----------|-------------------------------|
 | `map`       | IMap proxy obtained via Hazelcast Client | yes      | Configured hazelcast map proxy|
 | `namespace` | string                                   | no       | Prefix for all keys           |
-| `ttl`  | integer                                       | no       | Keys time to live, seconds    |
+| `ttl`       | integer                                  | no       | Keys time to live, seconds    |
 
 ## Storing format
 Each object stored as single JSON string.
