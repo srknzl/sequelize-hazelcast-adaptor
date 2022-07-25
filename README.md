@@ -15,6 +15,7 @@ const hazelcastAdaptor = new HazelcastAdaptor({
   map: map,
   namespace: 'model', // optional
   ttl: 60 * 60, // optional
+  maxIdle: 60 * 60, // optional
 })
 ```
 
