@@ -1,8 +1,8 @@
 class HazelcastAdaptor {
-    constructor ({ map, namespace, lifetime }) {
+    constructor ({ map, namespace, ttl }) {
       this.map = map
       this.namespace = namespace
-      this.lifetime = lifetime
+      this.ttl = ttl
     }
   
     _withNamespace (key) {
@@ -18,7 +18,7 @@ class HazelcastAdaptor {
       return this.map.set(
         this._withNamespace(key),
         JSON.stringify(value),
-        this.lifetime
+        this.ttl
       )
     }
   
