@@ -25,6 +25,10 @@ const hazelcastAdaptor = new HazelcastAdaptor({
 | `map`       | IMap proxy obtained via Hazelcast Client | yes      | Configured hazelcast map proxy|
 | `namespace` | string                                   | no       | Prefix for all keys           |
 | `ttl`       | integer                                  | no       | Keys time to live, seconds    |
+| `maxIdle`   | integer                                  | no       | Keys max idle time, seconds   |
+
+For detailed explanation of `ttl` and `maxIdle`, see Hazelcast Node.js Client's `IMap.set` method in
+[API documentation](https://hazelcast.github.io/hazelcast-nodejs-client/).
 
 ## Storing format
 Each object stored as single JSON string.

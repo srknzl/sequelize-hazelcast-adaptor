@@ -1,8 +1,9 @@
 class HazelcastAdaptor {
-    constructor ({ map, namespace, ttl }) {
+    constructor ({ map, namespace, ttl, maxIdle }) {
       this.map = map
       this.namespace = namespace
       this.ttl = ttl
+      this.maxIdle = maxIdle;
     }
   
     _withNamespace (key) {
@@ -18,7 +19,8 @@ class HazelcastAdaptor {
       return this.map.set(
         this._withNamespace(key),
         JSON.stringify(value),
-        this.ttl
+        this.ttl,
+        this.maxIdle
       )
     }
   
