@@ -13,7 +13,6 @@ const map = await client.getMap('sequelizeMap');
 const HazelcastAdaptor = require('sequelize-transparent-cache-hazelcast')
 const hazelcastAdaptor = new HazelcastAdaptor({
   map: map,
-  namespace: 'model', // optional
   ttl: 60 * 60, // optional
   maxIdle: 60 * 60, // optional
 })
@@ -24,7 +23,6 @@ const hazelcastAdaptor = new HazelcastAdaptor({
 | Param       | Type                                     | Required | Description                   |
 |-------------|------------------------------------------|----------|-------------------------------|
 | `map`       | IMap proxy obtained via Hazelcast Client | yes      | Configured hazelcast map proxy|
-| `namespace` | string                                   | no       | Prefix for all keys           |
 | `ttl`       | integer                                  | no       | Keys time to live, seconds    |
 | `maxIdle`   | integer                                  | no       | Keys max idle time, seconds   |
 
@@ -37,6 +35,6 @@ Namespace delimeter is ":".
 
 | Key                                  | Value           |
 |--------------------------------------|-----------------|
-| `<namespace>:<modelName>:<objectId>` | `{JSON string}` |
+| `<modelName>:<objectId>`             | `{JSON string}` |
 
 For more info see [sequelize-transparent-cache](https://www.npmjs.com/package/sequelize-transparent-cache)
